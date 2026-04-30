@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import type { ReactNode } from "react";
 
-interface LayoutProps {
+interface SidebarLayoutProps {
   children: ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+// Default layout: left sidebar nav + main content. Best for multi-section
+// apps with several pages. Edit the NavLink list below to match the routes
+// you wire up in App.tsx.
+export default function SidebarLayout({ children }: SidebarLayoutProps) {
   return (
     <div className="flex h-full min-h-0">
       <aside className="w-52 shrink-0 border-r border-stone-200 bg-white">

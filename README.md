@@ -30,16 +30,26 @@ dashboard-template/
 ├── server.js             # Express: /api/query + static SPA
 ├── src/
 │   ├── main.tsx          # React root
-│   ├── App.tsx           # Router + layout shell
+│   ├── App.tsx           # Router + picks one layout shell
 │   ├── index.css         # Tailwind directives
 │   ├── db.ts             # Turso client helper (used server-side only)
 │   ├── lib/api.ts        # Thin fetch wrapper for /api/*
 │   ├── pages/Overview.tsx  # Example page with metric cards
 │   └── components/
-│       ├── Layout.tsx
 │       ├── MetricCard.tsx
-│       └── Chart.tsx
+│       ├── Chart.tsx
+│       └── layouts/      # Six interchangeable shells — App.tsx picks one
+│           ├── SidebarLayout.tsx       # default — left nav + content
+│           ├── TopNavLayout.tsx        # top navbar + full-width content
+│           ├── TopNavTabsLayout.tsx    # header + tabbed sub-nav (Stripe-style)
+│           ├── SplitPaneLayout.tsx     # list (left) + detail (right) — inbox/CRM
+│           ├── CanvasLayout.tsx        # no chrome — one-page report / embed
+│           └── CenteredLayout.tsx      # one focused card — login / form
 ```
+
+**Picking a layout:** all six shells share the same stone palette and
+typography. Swap which one `App.tsx` imports based on what you're building.
+The `create-dashboard` skill has the full decision table.
 
 ## Environment Variables
 
