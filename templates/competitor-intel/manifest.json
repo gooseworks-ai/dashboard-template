@@ -1,0 +1,52 @@
+{
+  "layout": "SidebarLayout",
+  "title": "Competitor Intel",
+  "default_path": "/",
+  "nav": [
+    {
+      "path": "/",
+      "label": "Overview",
+      "component": "CompetitorOverview",
+      "file": "CompetitorOverview",
+      "always_on": true
+    },
+    {
+      "path": "/change-feed",
+      "label": "Change Feed",
+      "component": "ChangeFeed",
+      "file": "ChangeFeed",
+      "always_on": true
+    },
+    {
+      "path": "/weekly-briefs",
+      "label": "Weekly Briefs",
+      "component": "WeeklyBriefs",
+      "file": "WeeklyBriefs",
+      "always_on": true
+    },
+    {
+      "path": "/hiring",
+      "label": "Hiring Tracker",
+      "component": "HiringTracker",
+      "file": "HiringTracker",
+      "always_on": false,
+      "config_flag": "tracking_areas.hiring"
+    },
+    {
+      "path": "/ads",
+      "label": "Ad Gallery",
+      "component": "AdGallery",
+      "file": "AdGallery",
+      "always_on": false,
+      "config_flag": "tracking_areas.paid_ads"
+    },
+    {
+      "path": "/pricing",
+      "label": "Pricing History",
+      "component": "PricingHistory",
+      "file": "PricingHistory",
+      "always_on": false,
+      "config_flag": "tracking_areas.pricing_pages"
+    }
+  ]
+}
